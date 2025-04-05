@@ -1,146 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vryxle</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background: linear-gradient(-45deg, #ff00c8, #00ffe7, #fffb00, #00ff2f);
-      background-size: 400% 400%;
-      animation: gradientMove 15s ease infinite;
-      font-family: 'Fredoka One', cursive;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    h1 {
-      font-size: 90px;
-      background: linear-gradient(270deg, #ff00c8, #00ffe7, #fffb00, #00ff2f, #ff00c8);
-      background-size: 800% 800%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbow 8s ease infinite;
-      text-shadow: 0 0 30px #fff;
-      margin-bottom: 60px;
-    }
-
-    @keyframes rainbow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .logos {
-      display: flex;
-      gap: 60px;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .logo-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: white;
-      font-size: 22px;
-      font-weight: bold;
-      transition: transform 0.3s;
-    }
-
-    .logo-item img {
-      width: 130px;
-      height: 130px;
-      object-fit: contain;
-      margin-bottom: 10px;
-      filter: drop-shadow(0 0 12px #fff);
-      transition: transform 0.4s, filter 0.4s;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .logo-item:hover img {
-      transform: scale(1.2) rotate(5deg);
-      filter: drop-shadow(0 0 20px #ffffff);
-    }
-
-    .logo-item:hover {
-      transform: translateY(-10px);
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    audio {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Links</title>
+    <style>
+        .social-media-links img {
+            width: 50px; /* Adjust size as needed */
+            margin: 10px; /* Spacing between icons */
+        }
+    </style>
 </head>
 <body>
-
-  <h1>Vryxle</h1>
-
-  <div class="logos">
-    <a class="logo-item" href="https://www.roblox.com/users/2512114169/profile" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_icon_-_logo.svg" alt="Roblox">
-      <span>Roblox</span>
-    </a>
-    <a class="logo-item" href="https://discord.com/users/1272555039638163490" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg" alt="Discord">
-      <span>Discord</span>
-    </a>
-    <a class="logo-item" href="https://www.tiktok.com/@ivryxlequ" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/en/6/69/TikTok_logo.svg" alt="TikTok">
-      <span>TikTok</span>
-    </a>
-    <a class="logo-item" href="https://www.youtube.com/@VryxleGaming" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube">
-      <span>YouTube</span>
-    </a>
-    <a class="logo-item" href="https://github.com/vryxle" target="_blank">
-      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
-      <span>GitHub</span>
-    </a>
-  </div>
-
-  <!-- Music Playlist -->
-  <audio id="musicPlayer" autoplay loop></audio>
-
-  <script>
-    const musicPlayer = document.getElementById('musicPlayer');
-    const playlist = [
-      "https://cdn.pixabay.com/audio/2023/03/30/audio_3264072f89.mp3",
-      "https://cdn.pixabay.com/audio/2023/03/28/audio_b4a76586e4.mp3",
-      "https://cdn.pixabay.com/audio/2022/11/07/audio_22b2b1d8f5.mp3"
-    ];
-    let currentTrack = 0;
-
-    function playNextTrack() {
-      musicPlayer.src = playlist[currentTrack];
-      musicPlayer.play();
-      currentTrack = (currentTrack + 1) % playlist.length;
-    }
-
-    musicPlayer.addEventListener('ended', playNextTrack);
-    window.onload = playNextTrack;
-  </script>
-
+    <h1>Connect with Us!</h1>
+    <div class="social-media-links">
+        <a href="https://www.youtube.com" target="_blank">
+            <img src="yt-icon.png" alt="YouTube" />
+        </a>
+        <a href="https://www.discord.com" target="_blank">
+            <img src="dc-icon.png" alt="Discord" />
+        </a>
+        <a href="https://www.roblox.com" target="_blank">
+            <img src="rblx-icon.png" alt="Roblox" />
+        </a>
+        <a href="https://www.tiktok.com" target="_blank">
+            <img src="tt-icon.png" alt="TikTok" />
+        </a>
+    </div>
 </body>
 </html>
