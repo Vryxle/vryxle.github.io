@@ -2,68 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vryxle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
-    /* Make the background awesome */
+    /* Background moving */
     body {
       margin: 0;
+      padding: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      background-size: 400% 400%;
-      animation: backgroundMove 15s ease infinite;
+      background: linear-gradient(135deg, #8e2de2, #4a00e0, #0f0c29);
+      background-size: 600% 600%;
+      animation: gradientAnimation 20s ease infinite;
       font-family: 'Poppins', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
       overflow: hidden;
       color: white;
-      text-align: center;
     }
 
-    @keyframes backgroundMove {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     h1 {
-      font-size: 70px;
-      background: linear-gradient(90deg, #8e2de2, #4a00e0, #8e2de2);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 80px;
+      background: linear-gradient(90deg, #9b59b6, #4a00e0);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: shine 3s linear infinite;
-      margin-bottom: 50px;
+      animation: shine 4s linear infinite;
+      text-shadow: 0 0 20px #8e2de2, 0 0 30px #4a00e0;
+      margin-bottom: 60px;
     }
 
     @keyframes shine {
-      0% {background-position: 0%;}
-      100% {background-position: 200%;}
+      0% { background-position: 0%; }
+      100% { background-position: 200%; }
     }
 
     .logos {
       display: flex;
-      gap: 50px;
+      gap: 60px;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
     }
 
     .logos a img {
-      width: 100px;
-      height: 100px;
-      transition: transform 0.4s, filter 0.4s;
-      filter: drop-shadow(0 0 15px #9b59b6);
+      width: 150px;
+      height: 150px;
       border-radius: 20px;
+      transition: transform 0.4s, filter 0.4s;
+      filter: drop-shadow(0 0 20px #8e2de2);
     }
 
     .logos a img:hover {
-      transform: scale(1.3) rotate(5deg);
-      filter: drop-shadow(0 0 25px #8e2de2);
+      transform: scale(1.2) rotate(3deg);
+      filter: drop-shadow(0 0 30px #4a00e0);
     }
 
-    /* Music player hidden but auto playing */
     audio {
       display: none;
     }
@@ -88,11 +92,27 @@
     </a>
   </div>
 
-  <!-- Auto play music -->
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/audio/2023/03/30/audio_3264072f89.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <!-- Music Playlist -->
+  <audio id="musicPlayer" autoplay loop></audio>
+
+  <script>
+    const musicPlayer = document.getElementById('musicPlayer');
+    const playlist = [
+      "https://cdn.pixabay.com/audio/2023/03/30/audio_3264072f89.mp3",
+      "https://cdn.pixabay.com/audio/2023/03/28/audio_b4a76586e4.mp3",
+      "https://cdn.pixabay.com/audio/2022/11/07/audio_22b2b1d8f5.mp3"
+    ];
+    let currentTrack = 0;
+
+    function playNextTrack() {
+      musicPlayer.src = playlist[currentTrack];
+      musicPlayer.play();
+      currentTrack = (currentTrack + 1) % playlist.length;
+    }
+
+    musicPlayer.addEventListener('ended', playNextTrack);
+    window.onload = playNextTrack;
+  </script>
 
 </body>
 </html>
