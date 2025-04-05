@@ -4,68 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vryxle</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <style>
-    /* Background moving */
     body {
       margin: 0;
       padding: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #8e2de2, #4a00e0, #0f0c29);
-      background-size: 600% 600%;
-      animation: gradientAnimation 20s ease infinite;
-      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #ff00c8, #00ffe7, #fffb00, #00ff2f);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      font-family: 'Fredoka One', cursive;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      color: white;
     }
 
-    @keyframes gradientAnimation {
+    @keyframes gradientMove {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
     h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 80px;
-      background: linear-gradient(90deg, #9b59b6, #4a00e0);
-      background-size: 200% auto;
+      font-size: 90px;
+      background: linear-gradient(270deg, #ff00c8, #00ffe7, #fffb00, #00ff2f, #ff00c8);
+      background-size: 800% 800%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: shine 4s linear infinite;
-      text-shadow: 0 0 20px #8e2de2, 0 0 30px #4a00e0;
+      animation: rainbow 8s ease infinite;
+      text-shadow: 0 0 30px #fff;
       margin-bottom: 60px;
     }
 
-    @keyframes shine {
-      0% { background-position: 0%; }
-      100% { background-position: 200%; }
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .logos {
       display: flex;
-      gap: 60px;
+      gap: 70px;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
     }
 
-    .logos a img {
-      width: 150px;
-      height: 150px;
-      border-radius: 20px;
-      transition: transform 0.4s, filter 0.4s;
-      filter: drop-shadow(0 0 20px #8e2de2);
+    .logo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      font-size: 22px;
+      font-weight: bold;
+      transition: transform 0.3s;
     }
 
-    .logos a img:hover {
+    .logo-item img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 0 10px #ffffff);
+      transition: transform 0.4s, filter 0.4s;
+    }
+
+    .logo-item:hover img {
       transform: scale(1.2) rotate(3deg);
-      filter: drop-shadow(0 0 30px #4a00e0);
+      filter: drop-shadow(0 0 20px #fff);
+    }
+
+    .logo-item:hover {
+      transform: translateY(-10px);
     }
 
     audio {
@@ -78,17 +93,21 @@
   <h1>Vryxle</h1>
 
   <div class="logos">
-    <a href="https://www.roblox.com/users/2512114169/profile" target="_blank">
+    <a class="logo-item" href="https://www.roblox.com/users/2512114169/profile" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_icon_-_logo.svg" alt="Roblox">
+      <span>Roblox</span>
     </a>
-    <a href="https://discord.com/users/1272555039638163490" target="_blank">
+    <a class="logo-item" href="https://discord.com/users/1272555039638163490" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg" alt="Discord">
+      <span>Discord</span>
     </a>
-    <a href="https://www.tiktok.com/@ivryxlequ" target="_blank">
+    <a class="logo-item" href="https://www.tiktok.com/@ivryxlequ" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/en/6/69/TikTok_logo.svg" alt="TikTok">
+      <span>TikTok</span>
     </a>
-    <a href="https://www.youtube.com/@VryxleGaming" target="_blank">
+    <a class="logo-item" href="https://www.youtube.com/@VryxleGaming" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube">
+      <span>YouTube</span>
     </a>
   </div>
 
