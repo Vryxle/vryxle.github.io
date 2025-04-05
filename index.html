@@ -1,65 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Username</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vryxle</title>
   <style>
     body {
+      background: #0f0f0f;
+      color: white;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      font-family: sans-serif;
-      background: linear-gradient(to right, #2e004f, #ae00ff);
+      padding: 50px;
+    }
+    h1 {
+      font-size: 70px;
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ff0000, #00ff00);
+      background-size: 400% 400%;
+      animation: gradient 8s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 50px;
+    }
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    .logos {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: white;
+      gap: 30px;
+      flex-wrap: wrap;
     }
-
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      padding: 40px;
-      text-align: center;
-      backdrop-filter: blur(10px);
+    .logos img {
+      width: 60px;
+      height: 60px;
+      transition: transform 0.3s, filter 0.3s;
+      filter: drop-shadow(0 0 10px #fff);
     }
-
-    .card img {
-      width: 100px;
-      border-radius: 50%;
-      margin-bottom: 20px;
+    .logos img:hover {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 20px #0ff);
     }
-
-    .username {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: orange;
-    }
-
-    .icons a {
-      margin: 0 10px;
-      font-size: 28px;
-      color: white;
+    a {
       text-decoration: none;
     }
-
-    .icons a:hover {
-      color: yellow;
-    }
   </style>
-  <!-- FontAwesome for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="card">
-    <img src="your-profile-pic.png" alt="Profile">
-    <div class="username">Vryxle</div>
-    <div class="icons">
-      <a href="https://youtube.com/@VryxleGaming" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://roblox.com/users/2512114169/profile" target="_blank"><i class="fas fa-gamepad"></i></a>
-      <a href="https://tiktok.com/@ivryxlequ" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://discord.com/users/1272555039638163490" target="_blank"><i class="fab fa-discord"></i></a>
-    </div>
+
+  <h1>Vryxle</h1>
+
+  <div class="logos">
+    <a href="https://www.roblox.com/users/2512114169/profile" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_icon_-_logo.svg" alt="Roblox">
+    </a>
+    <a href="https://discord.com/users/1272555039638163490" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg" alt="Discord">
+    </a>
+    <a href="https://www.tiktok.com/@ivryxlequ" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/en/6/69/TikTok_logo.svg" alt="TikTok">
+    </a>
+    <a href="https://www.youtube.com/@VryxleGaming" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube">
+    </a>
   </div>
+
 </body>
 </html>
